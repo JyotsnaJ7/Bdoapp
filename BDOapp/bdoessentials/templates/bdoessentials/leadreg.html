@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "bdoessentials/base.html" %}
+
+
+{% block body_block %}
+<br>
+<div class = "jumbotron">
+    <h1 align="center">Create Lead</h1>
+    <hr>
+    <br>
+            <form method="post" enctype="multipart/form-data" autocomplete="off">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br>
+                <input type="submit" class="btn btn-primary btn-lg active" value="Add Lead">
+            </form>
+    <br>
+    <br>
+    <table class="table" style="width:100%">
+        <tr>
+            <td><h3>Id</h3></td>
+            <td><h3>Name</h3></td>
+            <td><h3>E-mail</h3></td>
+            <td><h3>Phone</h3></td>
+            <td><h3>Status</h3></td>
+        </tr>
+        {% for lead in leads %}
+            <tr>
+                <td><h5>{{lead.leadId}}</h5></td>
+                <td><h5>{{lead.leadName}}</h5></td>
+                <td><h5>{{lead.email}}</h5></td>
+                <td><h5>{{lead.phone1}}</h5></td>
+                <td><h5>{{lead.status}}</h5></td>
+                <td><a href="{%url 'leaddetails' lead.id %}" class="btn btn-primary active">Details</a> </td>
+                <td><a href="{%url 'leadedit' lead.id %}" class="btn btn-primary active">Edit</a></td>
+                <td><a href="{%url 'followupview' lead.id %}" class="btn btn-primary active">Followup</a></td>
+                <td><a href="{%url 'upcomingfollowupview' lead.id %}" class="btn btn-primary btn-xs active">Upcomings</a></td>
+                <td><a href="{%url 'leaddelete' lead.id %}" class="btn btn-primary active">Delete {{lead.leadName}}</a></td>
+            </tr>
+        </div>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+<style>
+    body{
+    background-color:#F9F9FA;
+    }
+</style>

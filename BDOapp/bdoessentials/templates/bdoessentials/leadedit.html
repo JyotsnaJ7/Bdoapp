@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href= "{% url 'createlead' %}" >Home</a>
+    </nav>
+    <div class="jumbotron">
+    <br>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+       <form method="post" enctype="multipart/form-data" autocomplete="off">
+        {{Edit.as_p}}
+        {%csrf_token%}
+           <input type="submit" class="btn btn-light btn-lg btn-block" value="Edit Lead">
+        </form>
+        </div>
+        <div class="col-3"></div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
+<style>
+    body{
+    background-color:#F9F9FA;
+    }
+</style>

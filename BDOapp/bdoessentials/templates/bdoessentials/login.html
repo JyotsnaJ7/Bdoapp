@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'bdoessentials/css/background.css' %}">
+</head>
+<body id="bg" style="background-image: url('{% static "/bdoessentials/images/img.jpg" %}');" >
+<div class="container">
+
+<form method="post" autocomplete="off">
+    {% csrf_token %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Login</h1>
+    <br>
+    <div class="form-group">
+    <input type="username" placeholder="Enter valid username"  name="uname" class="form-control">
+  </div>
+    <br>
+  <div class="form-group">
+    <input type="password" placeholder="Enter password" name="pwd" class="form-control">
+  </div>
+    <br>
+    <button type="submit"  class="btn btn-primary active btn-lg ">Submit</button>
+    <br>
+    <br>
+<!--    <h2><strong><a href="{%url 'register' %}">Sign up</a></strong></h2>-->
+    <h3 align="right"><strong><a href="{%url 'register' %}">SIGN UP</a></strong></h3>
+</form>
+</body>
+</html>
+<!--<style>-->
+<!--    body{-->
+<!--    background-color:#F9F9FA;-->
+<!--    }-->
+<!--</style>-->

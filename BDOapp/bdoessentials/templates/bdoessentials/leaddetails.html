@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href= "{% url 'createlead' %}" >Home</a>
+    </nav>
+    <div class="jumbotron">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+        <div class="col-4"></div>
+        <img src="{{lead.picture.url}}" height="550" class="card-img-top">
+        <div>
+            <br>
+                    <h3>ID : {{lead.leadId}}</h3>
+                    <hr>
+                    <h3>Name : {{lead.leadName}}</h3>
+                    <hr>
+                    <h3>E-mail ID : {{lead.email}}</h3>
+                    <hr>
+                    <h3>Phone 1 : {{lead.phone1}}</h3>
+                    <hr>
+                    <h3>Status : {{lead.status}}</h3>
+                    <hr>
+                    <h3>Company : {{lead.company}}</h3>
+                    <hr>
+                    <h3>Contact Person : {{lead.contactPerson}}</h3>
+                    <hr>
+                    <h3>Location : {{lead.location}}</h3>
+                    <hr>
+                    <h3>Register Date : {{lead.leadRegisterDate}}</h3>
+                    <hr>
+                    <h3>Phone 2 : {{lead.phone2}}</h3>
+                    <hr>
+                    <h3>Website Address : <a href="{{ lead.websiteAddress }}">{{ lead.websiteAddress }}</a></h3>
+                    <hr>
+                    <h3>Lead Source : {{lead.leadSource}}</h3>
+                    <hr>
+                    <h3>Lead Industry : {{lead.leadIndustry}}</h3>
+                    <hr>
+                    <h3>Lead Type : {{lead.leadType}}</h3>
+                    <hr>
+                    <h3>Office Address : {{lead.officeAddress}}</h3>
+                    <hr>
+                    <h3>Additional Notes : {{lead.additionalNotes}}</h3>
+
+ </div>
+</div>
+
+</div>
+    </div>
+</body>
+</html>
+<style>
+    body{
+    background-color:#F9F9FA;
+    }
+</style>
